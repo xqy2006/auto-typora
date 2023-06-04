@@ -504,7 +504,19 @@ Type: filesandordirs; Name: "{userappdata}\Typora\GPUCache";
 Type: filesandordirs; Name: "{userappdata}\Typora\Network Persistent State"; 
 Type: filesandordirs; Name: "{userappdata}\Typora\Preferences"; 
 Type: filesandordirs; Name: "{userappdata}\Typora\TransportSecurity"; 
-
+[CustomMessages]
+english.NameAndVersion=%1 version %2
+english.AdditionalIcons=Additional shortcuts:
+english.CreateDesktopIcon=Create a &desktop shortcut
+english.CreateQuickLaunchIcon=Create a &Quick Launch shortcut
+english.ProgramOnTheWeb=%1 on the Web
+english.UninstallProgram=Uninstall %1
+english.LaunchProgram=Launch %1
+english.AssocFileExtension=&Associate %1 with the %2 file extension
+english.AssocingFileExtension=Associating %1 with the %2 file extension...
+english.AutoStartProgramGroupDescription=Startup:
+english.AutoStartProgram=Automatically start %1
+english.AddonHostProgramNotFound=%1 could not be located in the folder you selected.%n%nDo you want to continue anyway?
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: checkablealone
 Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: checkablealone
@@ -512,4 +524,4 @@ Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescrip
 [Languages]
 ; These files are stubs
 ; To achieve better results after recompilation, use the real language files
-Name: "chinesesimp"; MessagesFile: "compiler:Default.isl"
+Name: "english"; MessagesFile: "embedded\english.isl";
