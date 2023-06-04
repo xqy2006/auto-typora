@@ -1,0 +1,14 @@
+name: test keygen
+on:
+  workflow_dispatch:
+jobs:
+  build:
+
+    runs-on: windows-latest
+    environment: 
+      name: private
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2.5.2
+    - run: |
+        node keygen.js ${{ secrets.key }}
