@@ -25,6 +25,8 @@ with open("atom.js", "r",encoding='utf-8') as f:
 with open("atom.js","w",encoding='utf-8') as f:
   f.write(file_data)
 
+with open("version.txt","w",encoding='utf-8') as f:
+  f.write(version)
 
 os.system("copy /y \"./atom.js\" \"./{app}/resources/app/\"")
 os.system("asar pack ./{app}/resources/app ./app.asar")
