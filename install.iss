@@ -492,7 +492,7 @@ Root: HKLM; Subkey: "Software\Classes\Applications\Typora.exe\SupportedTypes"; V
 Filename: "{app}\Typora.exe"; Parameters: "--reopen-file";  Flags: postinstall nowait
 
 [Icons]
-Name: "{group}\Typora"; Filename: "{app}\Typora.exe";  
+Name: "{group}\Typora"; Filename: "{app}\Typora.exe";  Tasks: desktopicon
 
 [InstallDelete]
 Type: filesandordirs; Name: "{app}\winmm.dll"; 
