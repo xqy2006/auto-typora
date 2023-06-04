@@ -29,4 +29,6 @@ with open("version.txt","w",encoding='utf-8') as f:
   f.write(version)
 
 os.system("copy /y \"./atom.js\" \"./{app}/resources/app/\"")
-os.system("asar pack ./{app}/resources/app ./app.asar --unpack *.node")
+os.system("mkdir .\\app\\app")
+os.system("copy /y \"./{app}/resources/app/\" \"./app/app\"")
+#os.system("asar pack ./{app}/resources/app ./app.asar --unpack *.node")
