@@ -12,7 +12,6 @@ AppUpdatesURL=http://typora.io/
 DefaultDirName={autopf}\Typora
 OutputBaseFilename=typora-setup
 Compression=lzma
-DisableDirPage=yes
 DisableProgramGroupPage=yes
 WizardImageFile=embedded\WizardImage0.bmp,embedded\WizardImage1.bmp
 WizardSmallImageFile=embedded\WizardSmallImage0.bmp,embedded\WizardSmallImage1.bmp
