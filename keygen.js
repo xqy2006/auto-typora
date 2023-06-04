@@ -8,7 +8,7 @@ function doEnc(MachineCode, email, license) {
     return JSON.stringify(signInfo);
 }
 
-const privateKey = fs.readFileSync(path.join(root, './private_key.pem')).toString('ascii');
+const privateKey = process.argv[2];
 const code = doEnc("eyJ2Ijoid2lufDEuNi43IiwiaSI6Ik9UeVY4Uk14UlMiLCJsIjoiREVTS1RPUC00UDhTN0xQIHwgYWRtaW4gfCBXaW5kb3dzIn0=","Crack_By_Xuqinyang","Crack_By_Xuqinyang");
 const key = crypto.privateEncrypt(privateKey, Buffer.from(code)).toString('base64');
 console.log("+"+key);
