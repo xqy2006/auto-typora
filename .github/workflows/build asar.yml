@@ -30,10 +30,17 @@ jobs:
       with:
           name: ${{ steps.package.outputs.content }}
           path: ./app.asar
+    - name: Create Tag
+      uses: negz/create-tag@v1
+      with:
+        version: ${{ steps.package.outputs.content }}
+        message: ${{ steps.package.outputs.content }}
+        token: ${{ secrets.GITHUB_TOKEN }}
     - uses: ncipollo/release-action@v1
       with:
         allowUpdates: true
         tag: ${{ steps.package.outputs.content }}
         name: Release ${{ steps.package.outputs.content }}
+        token: ${{ secrets.GITHUB_TOKEN }}
         artifacts: |
           ./app.asar
