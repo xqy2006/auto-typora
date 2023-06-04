@@ -3,7 +3,7 @@
 [Setup]
 AppName=Typora
 AppVerName=Typora
-AppId={{37771A20-7167-44C0-B322-FD3E54C56156}
+AppId={{D9B8044D-5B46-4676-BD63-F270441F668F}
 AppVersion=1.0.0
 AppPublisher=typora.io
 AppPublisherURL=http://typora.io/
@@ -516,6 +516,10 @@ english.AssocingFileExtension=Associating %1 with the %2 file extension...
 english.AutoStartProgramGroupDescription=Startup:
 english.AutoStartProgram=Automatically start %1
 english.AddonHostProgramNotFound=%1 could not be located in the folder you selected.%n%nDo you want to continue anyway?
+
+[Tasks]
+Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: checkablealone
+Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: checkablealone
 
 [Languages]
 ; These files are stubs
