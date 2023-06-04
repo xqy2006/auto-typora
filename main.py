@@ -5,7 +5,7 @@ import wget
 wget.download("https://typoraio.cn/releases/windows_64.json","./windows_64.json")
 s = json.load(open("./windows_64.json","r",encoding="utf-8"))
 name = s['downloadCN'].replace("https://download2.typoraio.cn/windows/","")
-version = name.replece("typora-update-x64-","").replece(".exe","")
+version = name.replace("typora-update-x64-","").replace(".exe","")
 print("url:"+s['downloadCN'])
 print("name:"+name)
 print("version:"+version)
