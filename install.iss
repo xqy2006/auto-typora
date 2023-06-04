@@ -15,7 +15,8 @@ Compression=lzma
 DisableProgramGroupPage=yes
 WizardImageFile=embedded\WizardImage0.bmp,embedded\WizardImage1.bmp
 WizardSmallImageFile=embedded\WizardSmallImage0.bmp,embedded\WizardSmallImage1.bmp
-
+ArchitecturesAllowed=x64
+ArchitecturesInstallIn64BitMode=x64
 DisableWelcomePage=no
 DisableDirPage=no
 [Files]
@@ -524,4 +525,4 @@ Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescrip
 [Languages]
 ; These files are stubs
 ; To achieve better results after recompilation, use the real language files
-Name: "english"; MessagesFile: "embedded\english.isl"; 
+Name: "chinesesimp"; MessagesFile: "compiler:Default.isl"
