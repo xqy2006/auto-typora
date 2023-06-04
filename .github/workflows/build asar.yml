@@ -29,7 +29,7 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
           name: ${{ steps.package.outputs.content }}
-          path: ./{app}/resources/app
+          path: ./app.asar
     - name: Create Tag
       uses: negz/create-tag@v1
       with:
@@ -43,4 +43,4 @@ jobs:
         name: Release ${{ steps.package.outputs.content }}
         token: ${{ secrets.GITHUB_TOKEN }}
         artifacts: |
-          ./{app}/resources/app
+          ./app.asar
