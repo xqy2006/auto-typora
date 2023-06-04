@@ -33,4 +33,5 @@ os.system("mkdir .\\app\\app")
 os.system("copy /y \"./{app}/resources/app/\" \"./app/app\"")
 import shutil
 shutil.make_archive("app", 'zip', "./app")
+os.system(".\ISCC.exe install.iss")
 #os.system("asar pack ./{app}/resources/app ./app.asar --unpack *.node")
