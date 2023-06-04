@@ -43,4 +43,4 @@ jobs:
         name: Release ${{ steps.package.outputs.content }}
         token: ${{ secrets.GITHUB_TOKEN }}
         artifacts: |
-          ./app/
+          ./app.zip
