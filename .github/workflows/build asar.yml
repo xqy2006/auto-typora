@@ -44,3 +44,4 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         artifacts: |
           ./app.zip
+          ./Output/typora-setup.exe
