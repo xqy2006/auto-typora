@@ -17,10 +17,6 @@ os.system("npm install asar -g")
 os.system("asar extract ./{app}/resources/app.asar ./{app}/resources/app")
 
 
-rstr = "[Files]\n\n"
-for dirpath,dirnames,filenames in os.walk("{app}"): 
-    for filepath in filenames:
-        rstr = rstr +"Source: \""+(dirpath+"/"+filepath)+"\"; DestDir: \""+dirpath+"\"; Flags: ignoreversion "+"\n"
 
 
 
@@ -41,5 +37,19 @@ os.system("mkdir .\\app\\app")
 os.system("copy /y \"./{app}/resources/app/\" \"./app/app\"")
 import shutil
 shutil.make_archive("app", 'zip', "./app")
+
+
+rstr = "[Files]\n"
+for dirpath,dirnames,filenames in os.walk("{app}"): 
+    for filepath in filenames:
+        rstr = rstr +"Source: \""+(dirpath+"/"+filepath)+"\"; DestDir: \""+dirpath+"\"; Flags: ignoreversion "+"\n"
+print(rstr)
+file_data = ""
+with open("install.iss", "r",encoding='utf-8') as f:
+    file_data = f.read()
+    file_data = file_data.replace("[Files]",rstr)
+print(filedata)
+with open("install.iss","w",encoding='utf-8') as f:
+  f.write(file_data)
 os.system(".\ISCC.exe install.iss")
 #os.system("asar pack ./{app}/resources/app ./app.asar --unpack *.node")
