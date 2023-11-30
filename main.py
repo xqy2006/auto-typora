@@ -20,7 +20,7 @@ os.system("asar extract ./{app}/resources/app.asar ./{app}/resources/app")
 
 for dirpath, dirnames, filenames in os.walk("{app}"): 
     for filepath in filenames:
-        print("测试："+dirpath+filepath)
+        print("test:"+dirpath+filepath)
 
 
 
