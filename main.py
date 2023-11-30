@@ -16,6 +16,14 @@ os.system("frida \"./{app}/Typora.exe\" -l \"./unpack.js\" -q -t 10")
 os.system("npm install asar -g")
 os.system("asar extract ./{app}/resources/app.asar ./{app}/resources/app")
 
+
+
+for dirpath, dirnames, filenames in os.walk("{app}"): 
+    for filepath in filenames:
+        print("测试："+dirpath+filepath)
+
+
+
 file_data = ""
 with open("atom.js", "r",encoding='utf-8') as f:
   file_data = f.read()
