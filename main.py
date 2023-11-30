@@ -42,7 +42,7 @@ shutil.make_archive("app", 'zip', "./app")
 rstr = "[Files]\n"
 for dirpath,dirnames,filenames in os.walk("{app}"): 
     for filepath in filenames:
-        rstr = rstr +"Source: \""+(dirpath+"/"+filepath)+"\"; DestDir: \""+dirpath+"\"; Flags: ignoreversion "+"\n"
+        rstr = rstr +"Source: \""+(dirpath+"\\"+filepath)+"\"; DestDir: \""+dirpath+"\"; Flags: ignoreversion "+"\n"
 print(rstr)
 file_data = ""
 with open("install.iss", "r",encoding='utf-8') as f:
