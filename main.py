@@ -17,10 +17,10 @@ os.system("npm install asar -g")
 os.system("asar extract ./{app}/resources/app.asar ./{app}/resources/app")
 
 
-rstr = ""
+rstr = "[Files]\n\n"
 for dirpath,dirnames,filenames in os.walk("{app}"): 
     for filepath in filenames:
-        rstr = rstr +"Source: \""+(dirpath+"/"+filepath)+"\"; \nDestDir: \""+dirpath+"\"; \nFlags: ignoreversion "+"\n"
+        rstr = rstr +"Source: \""+(dirpath+"/"+filepath)+"\"; DestDir: \""+dirpath+"\"; Flags: ignoreversion "+"\n"
 
 
 
