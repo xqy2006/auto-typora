@@ -48,7 +48,7 @@ file_data = ""
 with open("install.iss", "r",encoding='utf-8') as f:
     file_data = f.read()
     file_data = file_data.replace("[Files]",rstr)
-print(filedata)
+print(file_data)
 with open("install.iss","w",encoding='utf-8') as f:
     f.write(file_data)
 os.system(".\ISCC.exe install.iss")
