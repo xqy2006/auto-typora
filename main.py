@@ -15,7 +15,7 @@ os.system("pip install frida frida-tools")
 os.system("frida \"./{app}/Typora.exe\" -l \"./unpack.js\" -q -t 10")
 os.system("npm install asar -g")
 os.system("asar extract ./{app}/resources/app.asar ./{app}/resources/app")
-
+os.system("rm -f ./{app}/resources/app.asar")
 
 
 
