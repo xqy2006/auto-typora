@@ -1,0 +1,49 @@
+name: build asar dev
+on:
+  schedule: 
+     - cron: '0 1 * * *'
+  workflow_dispatch:
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2.5.2
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.x' # Version range or exact version of a Python version to use, using SemVer's version range syntax
+        architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
+    - uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+    - run: |
+        python dev.py
+    - name: Read version
+      id: package
+      uses: juliangruber/read-file-action@v1
+      with:
+        path: ./version.txt
+    - uses: actions/upload-artifact@v3
+      with:
+          name: ${{ steps.package.outputs.content }}
+          path: ./app/
+    - name: Create Tag
+      uses: negz/create-tag@v1
+      with:
+        version: ${{ steps.package.outputs.content }}
+        message: ${{ steps.package.outputs.content }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+    - uses: ncipollo/release-action@v1
+      with:
+        allowUpdates: true
+        tag: ${{ steps.package.outputs.content }}
+        name: Release ${{ steps.package.outputs.content }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+        artifacts: |
+          ./app.zip
+          ./Output/typora-setup.exe
