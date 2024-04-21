@@ -1,6 +1,5 @@
 Inno Setup License
 ==================
-
 Except where otherwise noted, all of the documentation and software included in the Inno Setup
 package is copyrighted by Jordan Russell.
 
